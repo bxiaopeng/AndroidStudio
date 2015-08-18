@@ -1,8 +1,15 @@
 
-## 最新版本请看这里<Android Studio实用指南> 
+
+## 最新版本请看这里<Android Studio实用指南>
+
 http://yuedu.baidu.com/ebook/31beb61a9b6648d7c1c746e8
 
+## 更新日期: 2015年8月16日
+
+新增 11章第1节 配置JIRA、Github、Gitlab任务(task)
+
 ## 更新日期: 2015年8月15日
+
 ## 更新内容
 
 新增10.8节 恢复程序运行、暂停程序运行、停止进程、查看断点等
@@ -15,4 +22,3 @@ http://yuedu.baidu.com/ebook/31beb61a9b6648d7c1c746e8
 
 
 
-  
