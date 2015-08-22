@@ -64,11 +64,71 @@
 ### 举个例子:
 
 如下面的例子,我在输入@O的时候会出现代码补全列表,这个时候我想查看列表中项目的定义可以使用快捷键 option + space 或 command + y来查看.
+
 ![](./imgs/05_如何快速查看某个方法注解的定义1.png)
 
 查看方法的定义同上.使用快捷键 option + space 或 command + y来查看.
 
 ![](./imgs/05_如何快速查看某个方法注解的定义2.png)
+
+更多实用技巧请查看[《AndroidStudio实用指南》](http://yuedu.baidu.com/ebook/31beb61a9b6648d7c1c746e8)
+
+博客: http://blog.csdn.net/wirelessqa 作者: 老毕  
+
+
+## 《AndroidStudio每日一贴》6. 如何使用基础的自动补全?
+
+### 操作方法:
+
+option + 空格  (如果跟电脑的快捷键冲突,你可以到keymap中去自定义快捷键)
+
+可以在Java或其它类型的文件中使用自动补全.
+
+### 举个例子:
+
+在Java文件中输入set，然后按下 option + 空格,会出现自动补全列表.
+![](./imgs/06_如何使用基础的自动补全.png)
+
+如下图, .properties文件中使用方法也是一样的.
+![](./imgs/06_如何使用基础的自动补全2.png)
+
+更多实用技巧请查看[《AndroidStudio实用指南》](http://yuedu.baidu.com/ebook/31beb61a9b6648d7c1c746e8)
+
+博客: http://blog.csdn.net/wirelessqa 作者: 老毕  
+
+
+
+## 《AndroidStudio每日一贴》7. 如何将本地变更文件移到其它的changelist？
+
+### 操作方法:
+
+进入Version Control —> Local Changes ，会显示本地变更列表分组.
+
+如果你想将某个changelist中的文件转移到其它的changelist,
+选中此文件,在弹出的菜单中选择 [Move to Another Changelist].
+
+如下图:
+
+![](./imgs/07_如何将本地变更文件移到其它的changelist.png)
+
+然后你可以选择已存在的changelist,或自己新建一个.
+
+![](./imgs/07_如何将本地变更文件移到其它的changelist2.png)
+
+更多实用技巧请查看[《AndroidStudio实用指南》](http://yuedu.baidu.com/ebook/31beb61a9b6648d7c1c746e8)
+
+博客: http://blog.csdn.net/wirelessqa 作者: 老毕  
+
+
+
+
+## 《AndroidStudio每日一贴》8.
+
+### 操作方法:
+
+
+### 举个例子:
+
 
 更多实用技巧请查看[《AndroidStudio实用指南》](http://yuedu.baidu.com/ebook/31beb61a9b6648d7c1c746e8)
 
