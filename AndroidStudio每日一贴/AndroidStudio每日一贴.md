@@ -122,12 +122,35 @@ option + 空格  (如果跟电脑的快捷键冲突,你可以到keymap中去自
 
 
 
-## 《AndroidStudio每日一贴》8.
+## 《AndroidStudio每日一贴》8. 如何关闭除了当前文件以外的所有文件？
 
 ### 操作方法:
 
+两个方法:
 
-### 举个例子:
+方法一. 右击当前打开的标签，选择[Close Others]
+
+![](./imgs/08_如何关闭除了当前文件以外的所有文件1.png)
+
+方法二. 点击当前文件标签右上角的叉叉按钮
+
+![](./imgs/08_如何关闭除了当前文件以外的所有文件2.png)
+
+
+更多实用技巧请查看[《AndroidStudio实用指南》](http://yuedu.baidu.com/ebook/31beb61a9b6648d7c1c746e8)
+
+博客: http://blog.csdn.net/wirelessqa 作者: 老毕  
+
+
+## 《AndroidStudio每日一贴》9. 如何使用导航栏快速切换项目中的视图？
+
+### 操作方法:
+
+导航栏可以快速切换项目中的视图显示。
+
+使用command + 向上键头显示导航栏,然后使用方向键来定位你要查看的文件或文件夹.
+
+![](./imgs/09_如何使用导航栏快速切换项目中的视图.png)
 
 
 更多实用技巧请查看[《AndroidStudio实用指南》](http://yuedu.baidu.com/ebook/31beb61a9b6648d7c1c746e8)
