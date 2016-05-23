@@ -31,7 +31,7 @@ import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
 /**
- * 测试parcelable接口是否被正确实现.
+ * 测试parcelable接口是否被正确实现
  */
 @RunWith(AndroidJUnit4.class)
 @SmallTest

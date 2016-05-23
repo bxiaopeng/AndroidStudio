@@ -1,0 +1,103 @@
+//插件:
+//这个module是一个android程序,使用com.android.application
+//如果是android库,应该使用com.android.library
+apply plugin: 'com.android.application'
+
+//产品名
+def PRODUCT_NAME = "wirelessqa"
+//打包时间
+def packageTime() {
+    return new Date().format("MMddhhmmss", TimeZone.getTimeZone("GMT+8"))
+}
+
+android {
+
+    // 签名配置
+    signingConfigs {
+        MySigning {
+            keyAlias 'myandroid'
+            keyPassword '123456'
+            storeFile file('/Users/bixiaopeng/myandroid.jks')
+            storePassword '123456'
+        }
+    }
+    // 编译sdk版本
+    compileSdkVersion 23
+    // 构建工具版本
+    buildToolsVersion "23.0.2"
+
+    // 默认配置
+    defaultConfig {
+        applicationId "com.wirelessqa.basebuildsample" //apk包名
+        minSdkVersion 16
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0" //版本号
+        //android单元测试test runner
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        versionNameSuffix 'test'
+    }
+
+    // 产品特性
+    productFlavors {
+        xiaomi {} //渠道名name为xiaomi
+        baidu {
+        }
+        wandoujia {}
+        // 自动替换AndroidManifest.xml中的渠道号
+        productFlavors.all { flavor ->
+            flavor.manifestPlaceholders = [CHANNEL_ID: name]
+        }
+    }
+
+    // 构建类型,此处配置debug和release版本的一些参数,像混淆、签名配置.
+    buildTypes {
+        // release包的配置
+        release {
+            //开启混淆
+            minifyEnabled true
+            // 指定混淆文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            // 指定签名配置
+            signingConfig signingConfigs.MySigning
+            zipAlignEnabled true
+            //移除无用的资源文件
+            shrinkResources true
+        }
+    }
+
+    // 打包后自动修改apk的名字
+    // release包的命名格式为:产品名_版本号_渠道号.apk
+    // debug包的命名格式为:产品名_版本号_渠道号_Debug_打包时间.apk
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            def outputFile = output.outputFile
+            if (null != outputFile && outputFile.name.endsWith('.apk')) {
+                File outputDir = new File(outputFile.parent);
+                def baseName = PRODUCT_NAME + "${defaultConfig.versionName}" + "_" + variant.productFlavors[0].name
+                def newApkName
+
+                if (variant.buildType.name.equals('release')) {
+                    newApkName = baseName + '.apk'
+                } else if (variant.buildType.name.equals('debug')) {
+                    newApkName = baseName + "_Debug_${packageTime()}.apk"
+                }
+
+                output.outputFile = new File(outputDir, newApkName)
+            }
+        }
+
+    }
+}
+
+// 依赖的第三方库
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha1'
+    compile 'com.android.support:design:23.4.0'
+    testCompile 'junit:junit:4.12'
+    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2'
+    androidTestCompile 'com.android.support.test:runner:0.5'
+    androidTestCompile 'com.android.support:support-annotations:23.4.0'
+}
